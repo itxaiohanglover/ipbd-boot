@@ -34,13 +34,5 @@ public class SysRoleEntity extends BaseEntity {
      * 数据范围  {@link DataScopeEnum}
      */
     private Integer dataScope;
-    /**
-     * 机构ID
-     */
-    @TableField(fill = FieldFill.INSERT)
-    private Long orgId;
-    /**
-     * 租户ID
-     */
-    private Long tenantId;
+
 }

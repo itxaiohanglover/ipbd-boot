@@ -47,10 +47,7 @@ public class SysUserTokenEntity {
      */
     private Date refreshTokenExpire;
 
-    /**
-     * 租户ID
-     */
-    private Long tenantId;
+
 
     /**
      * 创建时间

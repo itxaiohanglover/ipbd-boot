@@ -18,7 +18,10 @@ public interface SysParamsDao extends BaseDao<SysParamsEntity> {
         return this.exists(new QueryWrapper<SysParamsEntity>().eq("param_key", paramKey));
     }
 
-    default SysParamsEntity get(String paramKey) {
-        return this.selectOne(new QueryWrapper<SysParamsEntity>().eq("param_key", paramKey));
-    }
+    SysParamsEntity get(String paramKey);
+
+
+//    default SysParamsEntity get(String paramKey) {
+//        return this.selectOne(new QueryWrapper<SysParamsEntity>().eq("param_key", paramKey));
+//    }
 }

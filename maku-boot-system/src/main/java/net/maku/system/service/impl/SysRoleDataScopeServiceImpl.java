@@ -34,7 +34,6 @@ public class SysRoleDataScopeServiceImpl extends BaseServiceImpl<SysRoleDataScop
         if (CollUtil.isNotEmpty(insertOrgIdList)){
             List<SysRoleDataScopeEntity> orgList = insertOrgIdList.stream().map(orgId -> {
                 SysRoleDataScopeEntity entity = new SysRoleDataScopeEntity();
-                entity.setOrgId(orgId);
                 entity.setRoleId(roleId);
                 return entity;
             }).collect(Collectors.toList());
@@ -48,8 +47,6 @@ public class SysRoleDataScopeServiceImpl extends BaseServiceImpl<SysRoleDataScop
         if (CollUtil.isNotEmpty(deleteOrgIdList)){
             LambdaQueryWrapper<SysRoleDataScopeEntity> queryWrapper = new LambdaQueryWrapper<>();
             queryWrapper.eq(SysRoleDataScopeEntity::getRoleId, roleId);
-            queryWrapper.in(SysRoleDataScopeEntity::getOrgId, deleteOrgIdList);
-
             remove(queryWrapper);
         }
     }

@@ -45,10 +45,7 @@ public class SysUserEntity extends BaseEntity {
      * 手机号
      */
     private String mobile;
-    /**
-     * 机构ID
-     */
-    private Long orgId;
+
     /**
      * 超级管理员   0：否   1：是
      */
@@ -57,13 +54,6 @@ public class SysUserEntity extends BaseEntity {
      * 状态  {@link UserStatusEnum}
      */
     private Integer status;
-    /**
-     * 机构名称
-     */
-    @TableField(exist = false)
-    private String orgName;
-    /**
-     * 租户ID
-     */
-    private Long tenantId;
+
+
 }

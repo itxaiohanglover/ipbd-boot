@@ -100,9 +100,5 @@ public class SysLogOperateEntity {
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
-    /**
-     * 租户ID
-     */
-    private Long tenantId;
 
 }

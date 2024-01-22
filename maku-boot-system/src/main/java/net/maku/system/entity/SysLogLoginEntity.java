@@ -59,9 +59,6 @@ public class SysLogLoginEntity {
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
     
-    /**
-     * 租户ID
-     */
-    private Long tenantId;
+
 
 }

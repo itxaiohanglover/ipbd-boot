@@ -19,9 +19,6 @@ public class SysRoleDataScopeEntity extends BaseEntity {
 	 * 角色ID
 	 */
 	private Long roleId;
-	/**
-	 * 机构ID
-	 */
-	private Long orgId;
+
 
 }

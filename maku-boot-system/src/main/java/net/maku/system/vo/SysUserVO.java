@@ -11,7 +11,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import net.maku.framework.common.utils.DateUtils;
-import net.maku.system.entity.SysOrgEntity;
 import org.hibernate.validator.constraints.Range;
 
 import java.io.Serializable;
@@ -59,11 +58,6 @@ public class SysUserVO implements Serializable, TransPojo {
     @NotBlank(message = "手机号不能为空")
     private String mobile;
 
-    @Schema(description = "机构ID", required = true)
-    @NotNull(message = "机构ID不能为空")
-    @Trans(type = TransType.SIMPLE, target = SysOrgEntity.class, fields = "name", ref = "orgName")
-    private Long orgId;
-
     @Schema(description = "状态 0：停用    1：正常", required = true)
     @Range(min = 0, max = 1, message = "用户状态不正确")
     private Integer status;
@@ -77,8 +71,6 @@ public class SysUserVO implements Serializable, TransPojo {
     @Schema(description = "超级管理员   0：否   1：是")
     private Integer superAdmin;
 
-    @Schema(description = "机构名称")
-    private String orgName;
 
     @Schema(description = "创建时间")
     @JsonFormat(pattern = DateUtils.DATE_TIME_PATTERN)

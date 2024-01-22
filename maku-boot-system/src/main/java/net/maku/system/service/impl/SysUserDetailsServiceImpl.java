@@ -7,7 +7,6 @@ import net.maku.system.dao.SysRoleDataScopeDao;
 import net.maku.system.enums.DataScopeEnum;
 import net.maku.system.enums.UserStatusEnum;
 import net.maku.system.service.SysMenuService;
-import net.maku.system.service.SysOrgService;
 import net.maku.system.service.SysUserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -26,7 +25,6 @@ import java.util.Set;
 @AllArgsConstructor
 public class SysUserDetailsServiceImpl implements SysUserDetailsService {
     private final SysMenuService sysMenuService;
-    private final SysOrgService sysOrgService;
     private final SysRoleDao sysRoleDao;
     private final SysRoleDataScopeDao sysRoleDataScopeDao;
 
@@ -62,13 +60,6 @@ public class SysUserDetailsServiceImpl implements SysUserDetailsService {
         if (dataScope.equals(DataScopeEnum.ALL.getValue())) {
             // 全部数据权限，则返回null
             return null;
-        } else if (dataScope.equals(DataScopeEnum.ORG_AND_CHILD.getValue())) {
-            // 本机构及子机构数据
-            List<Long> dataScopeList = sysOrgService.getSubOrgIdList(userDetail.getOrgId());
-            // 自定义数据权限范围
-            dataScopeList.addAll(sysRoleDataScopeDao.getDataScopeList(userDetail.getId()));
-
-            return dataScopeList;
         } else if (dataScope.equals(DataScopeEnum.ORG_ONLY.getValue())) {
             // 本机构数据
             List<Long> dataScopeList = new ArrayList<>();
