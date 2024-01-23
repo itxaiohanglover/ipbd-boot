@@ -79,8 +79,4 @@ public class OperateLogDTO {
      */
     private String resultMsg;
 
-    /**
-     * 租户ID
-     */
-    private Long tenantId;
 }

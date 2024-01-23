@@ -40,11 +40,11 @@ storage:
   local:
     path: D://upload
 
-com:
+ipbd:
   xss:
     enabled: true
     exclude-urls:
-      - /maku-generator/**
+      - /ipbd-generator/**
   security:
     # 2小时过期
     access-token-expire: 7200

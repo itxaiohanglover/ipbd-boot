@@ -42,9 +42,4 @@ public interface Constant {
      */
     String OK = "OK";
 
-    /**
-     * pgsql的driver
-     */
-    String PGSQL_DRIVER = "org.postgresql.Driver";
-
 }
