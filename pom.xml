@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.maku</groupId>
-    <artifactId>maku-boot</artifactId>
+    <groupId>com.ipbd</groupId>
+    <artifactId>ipbd-boot</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
-    <name>maku-boot</name>
-    <description>maku-boot</description>
-    <url>https://maku.net</url>
+    <name>ipbd-boot</name>
+    <description>ipbd-boot</description>
+    <!--<url>https://maku.net</url>-->
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -17,12 +17,11 @@
     </parent>
 
     <modules>
-        <module>maku-boot-new</module>
-        <module>maku-boot-system</module>
-        <module>maku-boot-module</module>
-        <module>maku-boot-api</module>
-        <module>maku-framework</module>
-        <module>maku-server</module>
+        <module>ipbd-boot-system</module>
+        <module>ipbd-boot-module</module>
+        <module>ipbd-boot-api</module>
+        <module>ipbd-framework</module>
+        <module>ipbd-server</module>
     </modules>
 
     <properties>
