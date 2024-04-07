@@ -21,16 +21,6 @@ public class StorageConfiguration {
     public StorageService storageService(StorageProperties properties) {
         if (properties.getConfig().getType() == StorageTypeEnum.LOCAL) {
             return new LocalStorageService(properties);
-        } else if (properties.getConfig().getType() == StorageTypeEnum.ALIYUN) {
-            return new AliyunStorageService(properties);
-        } else if (properties.getConfig().getType() == StorageTypeEnum.TENCENT) {
-            return new TencentStorageService(properties);
-        } else if (properties.getConfig().getType() == StorageTypeEnum.QINIU) {
-            return new QiniuStorageService(properties);
-        } else if (properties.getConfig().getType() == StorageTypeEnum.HUAWEI) {
-            return new HuaweiStorageService(properties);
-        } else if (properties.getConfig().getType() == StorageTypeEnum.MINIO) {
-            return new MinioStorageService(properties);
         }
 
         return null;

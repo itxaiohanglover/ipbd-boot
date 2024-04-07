@@ -10,73 +10,89 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- SpringBoot基础常用 开始 -->
+        <!-- Tomcat服务器、Spring MVC等 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- Servlet API -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
-            <scope>provided</scope>
+            <scope>provided</scope> <!-- 这个依赖在运行时由Servlet容器（如Tomcat）提供，而不是包含在最终的WAR包中 -->
         </dependency>
+        <!-- 处理@ConfigurationProperties类，并生成元数据文件，以便在IDE中提供属性提示 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <optional>true</optional> <!-- 这个依赖不会传递性地引入到使用此项目的其他项目中 -->
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-        </dependency>
+        <!-- 测试Spring Boot应用，JUnit、Mockito -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <scope>test</scope> <!-- 仅用于测试阶段，不会包含在最终部署包中 -->
         </dependency>
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson-spring-boot-starter</artifactId>
-        </dependency>
+        <!-- Spring Security 用于用户认证、授权 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <!-- 表单数据验证 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <!-- 接口文档生成工具 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- SpringBoot基础常用 结束-->
+
+
+        <!-- Redisson，方便操作redis -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 数据库Mysql相关 开始 -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.dameng</groupId>
-            <artifactId>DmJdbcDriver18</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
+        <!-- 动态数据源 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
         </dependency>
+        <!-- 数据库Mysql相关 结束-->
+
+        <!-- 工具类：常见的日期处理、文件操作、网络请求等操作 -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
+
+        <!-- 读写Excel用，阿里巴巴开源库，速度特别快 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>easyexcel</artifactId>
         </dependency>
+        <!-- 简化I/O操作 -->
         <dependency>
             <artifactId>okio</artifactId>
             <groupId>com.squareup.okio</groupId>
         </dependency>
+
+        <!-- 数据翻译：比如我有一个字典码sex和一个字典值0，我希望能翻译成男给客户展示 -->
+        <!-- https://gitee.com/dromara/easy_trans -->
         <dependency>
             <groupId>com.fhs-opensource</groupId>
             <artifactId>easy-trans-mybatis-plus-extend</artifactId>
@@ -85,10 +101,14 @@
             <groupId>com.fhs-opensource</groupId>
             <artifactId>easy-trans-spring-boot-starter</artifactId>
         </dependency>
+
+        <!-- Java爬虫用 -->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
         </dependency>
+
+        <!-- 增强版的ThreadLocal，可以在多线程环境下正确地传递数据 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>transmittable-thread-local</artifactId>

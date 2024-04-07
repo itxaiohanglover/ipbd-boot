@@ -29,14 +29,6 @@ public class StorageProperties {
      */
     private AliyunStorageProperties aliyun;
     /**
-     * 七牛云配置项
-     */
-    private QiniuStorageProperties qiniu;
-    /**
-     * 华为云配置项
-     */
-    private HuaweiStorageProperties huawei;
-    /**
      * Minio配置项
      */
     private MinioStorageProperties minio;
@@ -71,18 +63,6 @@ public class StorageProperties {
     @ConfigurationProperties(prefix = "storage.aliyun")
     public AliyunStorageProperties aliyunStorageProperties() {
         return new AliyunStorageProperties();
-    }
-
-    @Bean
-    @ConfigurationProperties(prefix = "storage.qiniu")
-    public QiniuStorageProperties qiniuStorageProperties() {
-        return new QiniuStorageProperties();
-    }
-
-    @Bean
-    @ConfigurationProperties(prefix = "storage.huawei")
-    public HuaweiStorageProperties huaweiStorageProperties() {
-        return new HuaweiStorageProperties();
     }
 
     @Bean

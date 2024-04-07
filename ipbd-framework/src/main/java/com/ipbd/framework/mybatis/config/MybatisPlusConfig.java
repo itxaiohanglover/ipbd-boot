@@ -16,6 +16,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MybatisPlusConfig {
 
+    /**
+     * 插件设置
+     */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor mybatisPlusInterceptor = new MybatisPlusInterceptor();
@@ -31,6 +34,9 @@ public class MybatisPlusConfig {
         return mybatisPlusInterceptor;
     }
 
+    /**
+     * 用于字段填充处理
+     */
     @Bean
     public FieldMetaObjectHandler fieldMetaObjectHandler(){
         return new FieldMetaObjectHandler();

@@ -8,7 +8,7 @@ import com.ipbd.system.vo.SysUserTokenVO;
 /**
  * 用户Token
  *
- * @author 阿沐 babamu@126.com
+ * @author 文艺倾年
  */
 public interface SysUserTokenService extends BaseService<SysUserTokenEntity> {
 

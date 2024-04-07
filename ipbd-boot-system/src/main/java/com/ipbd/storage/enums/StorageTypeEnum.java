@@ -18,14 +18,6 @@ public enum StorageTypeEnum {
      */
     TENCENT,
     /**
-     * 七牛云
-     */
-    QINIU,
-    /**
-     * 华为云
-     */
-    HUAWEI,
-    /**
      * Minio
      */
     MINIO;
