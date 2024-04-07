@@ -17,13 +17,13 @@ knife4j:
   setting:
     custom-code: 500
     enable-footer-custom: false
-    
+
 spring:
   # 环境 dev|test|prod
   profiles:
     active: dev
   application:
-    name: maku-boot
+    name: ipbd-boot
   jackson:
     time-zone: GMT+8
   servlet:

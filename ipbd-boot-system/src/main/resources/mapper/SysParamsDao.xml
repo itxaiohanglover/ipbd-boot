@@ -5,6 +5,6 @@
 
 
     <select id="get" resultType="com.ipbd.system.entity.SysParamsEntity">
-        select * from maku_boot.sys_params where param_key =#{paramKey} limit 1
+        select * from ipbd_boot.sys_params where param_key =#{paramKey} limit 1
     </select>
 </mapper>
