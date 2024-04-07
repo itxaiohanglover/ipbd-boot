@@ -13,7 +13,7 @@ import org.springframework.util.PathMatcher;
  */
 @Configuration
 @EnableConfigurationProperties(XssProperties.class)
-@ConditionalOnProperty(prefix = "com.xss", value = "enabled")
+@ConditionalOnProperty(prefix = "ipbd.xss", value = "enabled")
 public class XssConfiguration {
 
     @Bean
